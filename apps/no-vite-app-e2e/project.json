@@ -1,0 +1,33 @@
+{
+  "name": "apps/no-vite-app-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/no-vite-app-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/no-vite-app-e2e/cypress.config.ts",
+        "devServerTarget": "apps/no-vite-app:serve:development",
+        "testingType": "e2e"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "apps/no-vite-app:serve:production"
+        },
+        "ci": {
+          "devServerTarget": "apps/no-vite-app:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/no-vite-app-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["apps/no-vite-app"]
+}

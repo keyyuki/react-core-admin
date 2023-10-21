@@ -1,0 +1,10 @@
+{
+  "codemetrics.basics.Exclude": [
+    ".spec.ts",".spec.tsx"
+  ],
+  "codemetrics.basics.IgnoredFunctionNames": [
+    "describe", "it", "beforeEach", "afterEach", "beforeAll", "afterAll"
+  ],
+  "jestrunner.jestPath": "",
+  "jestrunner.jestCommand": ""
+}
